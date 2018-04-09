@@ -4,6 +4,7 @@ import axios from 'axios'
 import About from './about/About.js'
 import Projects from './projects/Projects.js'
 import Experience from './experience/Experience.js'
+import Playground from './playground/Playground.js'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { Link, Route, Switch } from 'react-router-dom'
 
@@ -21,6 +22,7 @@ class App extends Component {
           </div>
         </nav>
         <Switch>
+          <Route path="/playground" component={Playground} />
           <Route path="/experience" component={Experience} />
           <Route path="/project" component={Projects} />
           <Route path="/" component={About} />
