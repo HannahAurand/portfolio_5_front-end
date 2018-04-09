@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
-import logo from './logo.svg'
 import './App.css'
+import axios from 'axios'
+import About from './about/About.js'
+import { BrowserRouter as Router } from 'react-router-dom'
 
 class App extends Component {
   render() {
@@ -15,6 +17,7 @@ class App extends Component {
             <p>JS Playground</p>
           </div>
         </nav>
+        <About />
       </div>
     )
   }
