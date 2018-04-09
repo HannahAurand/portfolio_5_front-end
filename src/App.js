@@ -2,7 +2,10 @@ import React, { Component } from 'react'
 import './App.css'
 import axios from 'axios'
 import About from './about/About.js'
+import Projects from './projects/Projects.js'
+import Experience from './experience/Experience.js'
 import { BrowserRouter as Router } from 'react-router-dom'
+import { Link, Route, Switch } from 'react-router-dom'
 
 class App extends Component {
   render() {
@@ -17,7 +20,11 @@ class App extends Component {
             <p>JS Playground</p>
           </div>
         </nav>
-        <About />
+        <Switch>
+          <Route path="/experience" component={Experience} />
+          <Route path="/project" component={Projects} />
+          <Route path="/" component={About} />
+        </Switch>
       </div>
     )
   }

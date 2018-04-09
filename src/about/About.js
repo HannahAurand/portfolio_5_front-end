@@ -18,13 +18,19 @@ class About extends Component {
   }
   render() {
     let data = this.state.LandingPage.map((data, index) => {
-      return <li key={index}>{data.name}</li>
+      return (
+        <div>
+          <p>{data.name}</p>
+          <p>{data.about}</p>
+          <p>{data.link}</p>
+          <p>
+            <img src={data.image} alt="CHARGING BULL" />
+          </p>
+          <p>{data.welcomeMessage}</p>
+        </div>
+      )
     })
-    return (
-      <div className="About">
-        <p>{data}</p>
-      </div>
-    )
+    return <div className="About">{data}</div>
   }
 }
 
