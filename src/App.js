@@ -17,9 +17,15 @@ class App extends Component {
           <p>Login</p>
           <p>Sign-up</p>
           <div className="menu">
-            <p>Projects</p>
-            <p>Experience</p>
-            <p>JS Playground</p>
+            <Link path to="/project">
+              <p>Projects</p>
+            </Link>
+            <Link path to="/experience">
+              <p>Experience</p>
+            </Link>
+            <Link path to="/playground">
+              <p>JS Playground</p>
+            </Link>
           </div>
         </nav>
         <Switch>
