@@ -14,19 +14,22 @@ class App extends Component {
     return (
       <div className="App">
         <nav className="name">
-          <p>Login</p>
-          <p>Sign-up</p>
-          <div className="menu">
-            <Link path to="/project">
-              <p>Projects</p>
-            </Link>
-            <Link path to="/experience">
-              <p>Experience</p>
-            </Link>
-            <Link path to="/playground">
-              <p>JS Playground</p>
-            </Link>
-          </div>
+          <Link to path="">
+            <p>Login</p>
+          </Link>
+          <Link to path="">
+            <p>Sign-up</p>
+          </Link>
+
+          <Link path to="/project">
+            <p>Projects</p>
+          </Link>
+          <Link path to="/experience">
+            <p>Experience</p>
+          </Link>
+          <Link path to="/playground">
+            <p>JS Playground</p>
+          </Link>
         </nav>
         <Switch>
           <Route path="/project/create" component={AddProject} />

@@ -4,6 +4,7 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import { Link, Route, Switch } from 'react-router-dom'
 import AddProject from '/Users/hannahaurand/wdi/portfolio/Front-End/portfolio/src/addProject/AddProject.js'
 import ProjectCard from '/Users/hannahaurand/wdi/portfolio/Front-End/portfolio/src/projectCard/ProjectCard.js'
+//import '/Users/hannahaurand/wdi/portfolio/Front-End/portfolio/src/projectCard/ProjectCard.css'
 
 class Projects extends Component {
   constructor() {
@@ -25,18 +26,20 @@ class Projects extends Component {
   render() {
     let data = this.state.projects.map((data, index) => {
       return (
-        <div>
-          <Link path to="/project/create">
-            <button>Add New Project</button>
-          </Link>
-          <div>
-            <ProjectCard />
-          </div>
+        <div className="ProjectCardContainer">
+          <ProjectCard />
           {/* <Route path="/project/create" component={AddProject} /> */}
         </div>
       )
     })
-    return <div className="projects">{data}</div>
+    return (
+      <div>
+        <Link path to="/project/create">
+          <button>Add New Project</button>
+        </Link>
+        {data}
+      </div>
+    )
   }
 }
 

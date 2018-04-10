@@ -3,6 +3,7 @@ import axios from 'axios'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { Link, Route, Switch } from 'react-router-dom'
 import AddProject from '/Users/hannahaurand/wdi/portfolio/Front-End/portfolio/src/addProject/AddProject.js'
+import './ProjectCard.css'
 
 class Projects extends Component {
   constructor() {
@@ -24,18 +25,20 @@ class Projects extends Component {
   render() {
     let data = this.state.projects.map((data, index) => {
       return (
-        <div className="project">
-          <p>{data.name}</p>
-          <p>{data.description}</p>
-          <p>{data.languages}</p>
-          <p>{data.link}</p>
-          <p>
-            <img src={data.image} alt={data.name} />
-          </p>
+        <div className="projectCardContainer">
+          <div className="projectCard">
+            <p>{data.name}</p>
+            <p>{data.description}</p>
+            <p>{data.languages}</p>
+            <p>{data.link}</p>
+            <p>
+              <img src={data.image} alt={data.name} />
+            </p>
+          </div>
         </div>
       )
     })
-    return <div className="projects">{data}</div>
+    return <div>{data}</div>
   }
 }
 

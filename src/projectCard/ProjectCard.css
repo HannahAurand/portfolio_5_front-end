@@ -1,0 +1,14 @@
+.projectCard {
+    border: 1px solid rgb(86, 182, 189);;
+    background-color: whitesmoke;
+    height: 230px;
+    width: 420px;
+    margin: 10px;
+}
+
+.projectCardContainer {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+
+}
