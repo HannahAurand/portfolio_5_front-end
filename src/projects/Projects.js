@@ -25,10 +25,12 @@ class Projects extends Component {
 
   render() {
     let data = this.state.projects.map((data, index) => {
+      console.log(data._id)
       return (
         <div className="ProjectCardContainer">
-          <ProjectCard />
-          {/* <Route path="/project/create" component={AddProject} /> */}
+          <Link to={'/project/' + data._id}>
+            <ProjectCard id={data._id} />
+          </Link>
         </div>
       )
     })

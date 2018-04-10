@@ -10,7 +10,7 @@ class About extends Component {
     }
   }
   componentDidMount() {
-    axios.get('https://portfolio-server-1991.herokuapp.com/').then(res => {
+    axios.get('https://portfolio-server-1991.herokuapp.com').then(res => {
       this.setState({
         LandingPage: res.data
       })
@@ -24,7 +24,7 @@ class About extends Component {
           <p>{data.about}</p>
           <p>{data.link}</p>
           <p>
-            <img src={data.image} alt="CHARGING BULL" />
+            <img src={data.image} alt={data.name} />
           </p>
           <p>{data.welcomeMessage}</p>
         </div>

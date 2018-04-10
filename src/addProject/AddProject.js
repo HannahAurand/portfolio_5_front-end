@@ -22,6 +22,7 @@ class AddProject extends Component {
   }
 
   render() {
+    console.log('show form!!')
     return (
       <div className="addProject">
         <form onSubmit={this.onSubmit}>
