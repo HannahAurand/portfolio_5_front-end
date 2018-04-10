@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import './Projects.css'
 import axios from 'axios'
-
+import { BrowserRouter as Router } from 'react-router-dom'
+import { Link, Route, Switch } from 'react-router-dom'
+import AddProject from './addProject/AddProject.js'
 class Projects extends Component {
   constructor() {
     super()
@@ -18,10 +20,14 @@ class Projects extends Component {
         })
       })
   }
+
   render() {
     let data = this.state.projects.map((data, index) => {
       return (
         <div>
+          <Link path to="/project/create">
+            <button>Add New Project</button>
+          </Link>
           <p>{data.name}</p>
           <p>{data.description}</p>
           <p>{data.languages}</p>
@@ -29,6 +35,7 @@ class Projects extends Component {
           <p>
             <img src={data.image} alt={data.name} />
           </p>
+          <Route path="/project/create" component={AddProject} />
         </div>
       )
     })
