@@ -12,13 +12,23 @@
 }
 
 nav {
-  background-color: rgb(86, 182, 189);
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  height: 40px;
   margin-bottom: 5px;
-}
+  /* borrowed from online, will edit later */
+    position: relative;
+    height: 80px;
+    background-image: linear-gradient(#2fffce, rgb(86, 182, 189));
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% 100%,
+      0 calc(100% - 5vw)
+    );
+    /* change the calc height to a percentage height to get alternate responsive behavior*/
+  }
+
 
 nav p, nav a {
   color: white;
