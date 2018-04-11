@@ -33,34 +33,26 @@ class ProjectCard extends Component {
       )
       .then(res => {
         //update state in parent
+        this.props.updateList(this.props.index)
         console.log(this.props.index)
       })
-    this.props.updateList(this.props.index)
   }
   render() {
     console.log(this.state.project)
 
-    // let data = this.state.projects.map((data, index) => {
-    // return (
-    //   <div className="projectCardContainer">
-    //     <div className="projectCard">
-    //       <p>{data.name}</p>
-    //       <p>{data.description}</p>
-    //       <p>{data.languages}</p>
-    //       <p>{data.link}</p>
-    //       <p>
-    //         <img src={data.image} alt={data.name} />
-    //       </p>
-    //     </div>
-    //   </div>
-    //)
-    //})
     return (
-      <div>
-        {this.state.project.name}
+      <div className="project_card">
+        <img src={this.state.project.image} />
+        <ul>
+          <li>{this.state.project.name}</li>
+          <li>{this.state.project.description}</li>
+          <li>{this.state.project.languages}</li>
+          <li>{this.state.project.link}</li>
+        </ul>
         <button onClick={this.handleDelete}>
           Completely Destroy this project
         </button>
+        <button>onClick={this.handleEdit}</button>
       </div>
     )
   }

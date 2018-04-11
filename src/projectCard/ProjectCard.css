@@ -1,14 +1,12 @@
-.projectCard {
-    border: 1px solid rgb(86, 182, 189);;
-    background-color: whitesmoke;
+.project_card {
+    box-shadow: rgba(0, 0, 0, 0.447);
     height: 230px;
     width: 420px;
     margin: 10px;
+    
 }
 
-.projectCardContainer {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-
+.project_card ul li {
+    list-style-type: none;
+    text-align: left;
 }
