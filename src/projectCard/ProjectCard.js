@@ -27,14 +27,19 @@ class ProjectCard extends Component {
 
   handleDelete(e) {
     e.preventDefault()
-    console.log(this.props.match.params.id)
-    axios.delete(
-      'https://portfolio-server-1991.herokuapp.com/project/' +
-        this.state.match.params.id
-    )
+    axios
+      .delete(
+        'https://portfolio-server-1991.herokuapp.com/project/' + this.props.id
+      )
+      .then(res => {
+        //update state in parent
+        console.log(this.props.index)
+      })
+    this.props.updateList(this.props.index)
   }
   render() {
     console.log(this.state.project)
+
     // let data = this.state.projects.map((data, index) => {
     // return (
     //   <div className="projectCardContainer">
@@ -50,7 +55,14 @@ class ProjectCard extends Component {
     //   </div>
     //)
     //})
-    return <div>{this.state.project.name}</div>
+    return (
+      <div>
+        {this.state.project.name}
+        <button onClick={this.handleDelete}>
+          Completely Destroy this project
+        </button>
+      </div>
+    )
   }
 }
 

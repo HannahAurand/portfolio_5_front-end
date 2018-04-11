@@ -34,7 +34,7 @@ class App extends Component {
         </nav>
         <Switch>
           <Route path="/project/create" component={AddProject} />
-          <Route path="/project/:id" component={ProjectDetails} />
+          <Route path="/project/:id" component={ProjectDetails} />} />
           <Route path="/playground" component={Playground} />
           <Route path="/experience" component={Experience} />
           <Route path="/project" component={Projects} />

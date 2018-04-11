@@ -12,6 +12,7 @@ class Projects extends Component {
     this.state = {
       projects: []
     }
+    this.updateList = this.updateList.bind(this)
   }
   componentDidMount() {
     axios
@@ -22,6 +23,24 @@ class Projects extends Component {
         })
       })
   }
+  //update the state to reflect the deleted project in the array
+  updateList() {
+    axios
+      .get('https://portfolio-server-1991.herokuapp.com/project')
+      .then(res => {
+        this.setState({
+          projects: res.data
+        })
+      })
+    // let newProjects = this.state.projects.slice()
+    // console.log(newProjects)
+    // let projects = newProjects.splice(index, 1, ...newProjects)
+    // console.log(projects)
+    // this.setState({
+    //   projects: projects
+    //})
+    //console.log(this.state.projects.splice(index, index + 1))
+  }
 
   render() {
     let data = this.state.projects.map((data, index) => {
@@ -29,7 +48,12 @@ class Projects extends Component {
       return (
         <div className="ProjectCardContainer">
           <Link to={'/project/' + data._id}>
-            <ProjectCard id={data._id} />
+            <ProjectCard
+              updateList={this.updateList}
+              history={this.props.history}
+              index={index}
+              id={data._id}
+            />
           </Link>
         </div>
       )
